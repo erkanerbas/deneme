@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset label="COM_JOOMPUSH" name="joompush">
+		<field
+			name="section"
+			type="radio"
+			label="COM_JOOMPUSH_SECTION_LABEL"
+			description="COM_JOOMPUSH_SECTION_LABEL_DESC"
+			default="3"
+			class="btn-group"
+			>
+			<option value="1">COM_JOOMPUSH_SECTION_SITE</option>
+			<option value="2">COM_JOOMPUSH_SECTION_ADMIN</option>
+			<option value="3">COM_JOOMPUSH_SECTION_BOTH</option>
+		</field>
+		<field name="allow_guest" type="radio" default="1" label="COM_JOOMPUSH_FORM_LBL_ALLOW_GUEST" class="btn-group btn-group-yesno" description="COM_JOOMPUSH_FORM_DESC_ALLOW_GUEST" hint="COM_JOOMPUSH_FORM_LBL_ALLOW_GUEST">
+		  <option value="1">Yes</option>
+		  <option value="0">No</option>
+		</field>
+		
+		<field name="notificationOnSubscribe" type="radio" default="0" label="COM_JOOMPUSH_FORM_LBL_NOTIFICATION_ON_SUBSCRIBE" class="btn-group btn-group-yesno" description="COM_JOOMPUSH_FORM_DESC_NOTIFICATION_ON_SUBSCRIBE" hint="COM_JOOMPUSH_FORM_LBL_NOTIFICATION_ON_SUBSCRIBE">
+		  <option value="1">Yes</option>
+		  <option value="0">No</option>
+		</field>
+		
+		<field
+			name="welcomeNotificationTitle"
+			type="text"
+			label="COM_JOOMPUSH_FORM_LBL_WELCOME_NOTIFICATION_TITLE"
+			description="COM_JOOMPUSH_FORM_DESC_WELCOME_NOTIFICATION_TITLE"
+			default="Thank You"
+			showon="notificationOnSubscribe:1"
+		/>
+		<field
+			name="welcomeNotificationMessage"
+			type="textarea"
+			label="COM_JOOMPUSH_FORM_LBL_WELCOME_NOTIFICATION_MESSAGE"
+			description="COM_JOOMPUSH_FORM_DESC_WELCOME_NOTIFICATION_MESSAGE"
+			default="Thank you for subscribing to Web Push Notification"
+			showon="notificationOnSubscribe:1"
+		/>
+		
+		<field name="welcomeNotificationIcon" type="media" label="COM_JOOMPUSH_FORM_LBL_WELCOME_NOTIFICATION_ICON" description="COM_JOOMPUSH_FORM_DESC_WELCOME_NOTIFICATION_ICON" hide_none="1" default="" showon="notificationOnSubscribe:1"/>
+    </fieldset>
+
+    <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">
+        <field name="rules" type="rules" component="com_joompush" class="inputbox" filter="rules" validate="rules" label="JCONFIG_PERMISSIONS_LABEL" section="component" />
+	</fieldset>
+</config>
